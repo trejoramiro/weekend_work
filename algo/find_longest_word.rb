@@ -2,6 +2,25 @@
 
 def find_longest_word(sentence)
 
+  longest_word = sentence.split()[0]
+
+  # sentence.split().each do |word|
+  #   if word.length > longest_word.length
+  #     longest_word = word
+  #   end 
+  # end
+
+  #sentence.split(%r{\s*})
+
+  sentence = sentence.delete("!?,':;")
+
+  sentence.split().select {|word| 
+    if word.length > longest_word.length 
+      then longest_word = word 
+    end}
+  
+  return longest_word
+
 end
 
 # Driver code - don't touch anything below this line.
